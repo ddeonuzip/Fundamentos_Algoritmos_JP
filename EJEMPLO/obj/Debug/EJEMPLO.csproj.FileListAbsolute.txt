@@ -1,0 +1,8 @@
+C:\Users\UPN\Desktop\MFQE-SEM06\EJEMPLO\EJEMPLO\bin\Debug\EJEMPLO.exe.config
+C:\Users\UPN\Desktop\MFQE-SEM06\EJEMPLO\EJEMPLO\bin\Debug\EJEMPLO.exe
+C:\Users\UPN\Desktop\MFQE-SEM06\EJEMPLO\EJEMPLO\bin\Debug\EJEMPLO.pdb
+C:\Users\UPN\Desktop\MFQE-SEM06\EJEMPLO\EJEMPLO\obj\Debug\EJEMPLO.csproj.AssemblyReference.cache
+C:\Users\UPN\Desktop\MFQE-SEM06\EJEMPLO\EJEMPLO\obj\Debug\EJEMPLO.csproj.CoreCompileInputs.cache
+C:\Users\UPN\Desktop\MFQE-SEM06\EJEMPLO\EJEMPLO\obj\Debug\EJEMPLO.exe
+C:\Users\UPN\Desktop\MFQE-SEM06\EJEMPLO\EJEMPLO\obj\Debug\EJEMPLO.pdb
+C:\Users\UPN\Desktop\MFQE-SEM06\EJEMPLO\EJEMPLO\obj\Debug\EJEMPLO.exe.config
