@@ -1,65 +1,76 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Posiciones
+namespace SEM13
 {
-    internal class Program //POSICIONEWS
+    internal class Program
     {
-        static void Main(string[] args)
+        string[] NOMBRES = new string[0];
+        byte[] EDADES = new byte[0];
+        int pos = 0;
+
+        public  int buscar(string nom)
         {
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-
-            int[] valorNumero = new int[4] { 10, 20, 30, 40 };
-            int pos, nuevoNum;
-            Console.WriteLine("Número de posiciones actuales: " + valorNumero.Length);
-            for (int i = 0; i < valorNumero.Length; i++)
+            for (int i=0; i < NOMBRES.Length; i++)
             {
-                Console.WriteLine(valorNumero[i]);
+
+                if (nom == NOMBRES[i]) return i;
+
             }
-
-            Console.WriteLine("Ingrese posición: ");
-            pos=int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Ingrese nuevo número: ");
-            nuevoNum = int.Parse(Console.ReadLine());
-
-            //cambuiar de tamaño al arreglo
-            Array.Resize(ref valorNumero, valorNumero.Length+1);
-            //valorNumero[4] = valorNumero[3];
-            //valorNumero[3] = valorNumero[2];
-            //valorNumero[2] = valorNumero[1];
-            //valorNumero[1] = nuevoNum;
-            //Pero es muy engorroso
+            return -1;
 
 
-            //Pasamos los num a la derecha
-            for (int i=(valorNumero.Length-1); i>0; i--)
-            {
-                if (i == pos - 1)
-                {
-                    valorNumero[i]=nuevoNum;
-                    break;
-                }
-                else
-                {
-                    valorNumero[i] = valorNumero[i - 1];
-                }
-             
-            }
-            
 
-            for (int i = 0; i < valorNumero.Length; i++)
-            {
-                Console.WriteLine($"Índice {i}: {valorNumero[i]}");
-            }
-            Console.WriteLine("Número de posiciones nuevas: "+valorNumero.Length);
-
-
-            //se usa una estructura repetitiva (no foreach porque tiene probelmas al disminuir)
-            //En cambio se puede usar 'for'
-
-            Console.ResetColor();
         }
+
+        public void modificar()
+        {
+
+            Console.Write("Ingrese el nokmbre a modificar: ");
+            string nom = Console.ReadLine();
+
+            int index = buscar(nom);
+
+            if (index == -1)
+            {
+
+                Console.Write("Ingrese el nuevo nombre: ");
+                NOMBRES[index] = Console.ReadLine();
+                Console.Write("Ingrese nueva edad: ");
+                EDADES[index] = byte.Parse(Console.ReadLine());
+
+
+            }
+            else Console.WriteLine("NO EXISTE");
+
+
+        }
+
+        public void eliminar()
+        {
+            Console.Write("Ingrese el nombre a eliminar");
+            string nom = Console.ReadLine();
+
+            int index = buscar(nom);
+
+            if (index == -1)
+            {
+                for (int i = index; i < NOMBRES.Length - 1; i++)
+                {
+                    NOMBRES[i] = NOMBRES[i + 1];
+                    EDADES[i] = EDADES[i + 1];
+
+                }
+                Array.Resize(ref EDADES, NOMBRES.Length - 1);
+                Array.Resize(ref NOMBRES, NOMBRES.Length - 1);
+                pos--;
+
+            }
+            else Console.WriteLine("NO EXISTE");
+        }
+
     }
 }
-
