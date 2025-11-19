@@ -1,76 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SEM13
+
+namespace proy1
 {
     internal class Program
     {
-        string[] NOMBRES = new string[0];
-        byte[] EDADES = new byte[0];
-        int pos = 0;
-
-        public  int buscar(string nom)
-        {
-            for (int i=0; i < NOMBRES.Length; i++)
-            {
-
-                if (nom == NOMBRES[i]) return i;
-
-            }
-            return -1;
-
-
-
-        }
-
-        public void modificar()
+        static void Main(string[] args)
         {
 
-            Console.Write("Ingrese el nokmbre a modificar: ");
-            string nom = Console.ReadLine();
+            //ARREGLOS BIDIMENSIONAL
 
-            int index = buscar(nom);
 
-            if (index == -1)
+
+            //DECFLARAMOS NUESTRO ARREGLO BIDIMENSIONAL
+            //tres columnas y diez filas
+            string[,] arregloEstudiante1 = new string[10, 3];
+
+            //DECLARAMOS EL ARREGLO BIDIMENSIONAL Y SUS VALORES
+
+
+            string[,] arregloEstudiante2 = { { "EST01", "PEPITO", "ISC" }, { "EST02","JUANITA","NUT" }, { "EST03", "LUCHITO", "ISC" },{ "EST04", "LEO", "PSIC" }, { "EST05", "FLORCITA", "PSIC" } };
+
+            //MOSTRAMOS E PANTALLA EL INDEX F1, INDEX C1
+            //Console.WriteLine("fila 1/columna 1: " + arregloEstudiante2[1, 1]);
+
+            Console.WriteLine("CÓDIGO   ESTUDIANTE  CARRERA");
+
+            //RRECOREMOS TODO EL ARREGLO BIDIMENSIONAL
+            for (int i = 0; i<arregloEstudiante2.GetLength(0); i++)
             {
+                Console.Write("\nfila " + i);
 
-                Console.Write("Ingrese el nuevo nombre: ");
-                NOMBRES[index] = Console.ReadLine();
-                Console.Write("Ingrese nueva edad: ");
-                EDADES[index] = byte.Parse(Console.ReadLine());
-
-
-            }
-            else Console.WriteLine("NO EXISTE");
-
-
-        }
-
-        public void eliminar()
-        {
-            Console.Write("Ingrese el nombre a eliminar");
-            string nom = Console.ReadLine();
-
-            int index = buscar(nom);
-
-            if (index == -1)
-            {
-                for (int i = index; i < NOMBRES.Length - 1; i++)
+                for (int j = 0; j < arregloEstudiante2.GetLength(1); j++)
                 {
-                    NOMBRES[i] = NOMBRES[i + 1];
-                    EDADES[i] = EDADES[i + 1];
-
+                    Console.Write(" "+arregloEstudiante2[1,j]+" ");
                 }
-                Array.Resize(ref EDADES, NOMBRES.Length - 1);
-                Array.Resize(ref NOMBRES, NOMBRES.Length - 1);
-                pos--;
-
+                //HACEMOS UN SLATO DE LINEA
+                Console.WriteLine();   
             }
-            else Console.WriteLine("NO EXISTE");
-        }
 
+
+        }
     }
 }
